@@ -1,0 +1,382 @@
+/* Cool animated gradient background for the whole page */
+.add-test-page {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #6ee7b7, #3b82f6, #a78bfa, #f472b6);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Card styles */
+.add-test-page .bg-white {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 1.25rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.add-test-page .bg-white:hover {
+  box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.22);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Button styles */
+.add-test-page button {
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  font-weight: 500;
+}
+
+.add-test-page button:active {
+  transform: scale(0.97);
+}
+
+.add-test-page .bg-blue-600 {
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+}
+
+.add-test-page .bg-blue-600:hover {
+  background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+}
+
+.add-test-page .bg-emerald-600 {
+  background: linear-gradient(90deg, #059669 0%, #34d399 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.08);
+}
+
+.add-test-page .bg-emerald-600:hover {
+  background: linear-gradient(90deg, #34d399 0%, #059669 100%);
+}
+
+.add-test-page .hover\:bg-purple-50:hover {
+  background: #f3e8ff !important;
+}
+
+/* Animated icon for AI */
+.add-test-page .animate-spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg);}
+}
+
+/* Inputs and textarea */
+.add-test-page input,
+.add-test-page textarea {
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid #e0e7ef;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.add-test-page input:focus,
+.add-test-page textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #a5b4fc44;
+}
+
+/* Section titles */
+.add-test-page h1, .add-test-page h2, .add-test-page h3 {
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(59,130,246,0.05);
+}
+
+/* Test type selection cards */
+.add-test-page .group {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.add-test-page .group:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,0.10);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .add-test-page .max-w-4xl {
+    padding: 0 !important;
+  }
+  .add-test-page .bg-white {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Subtle fade-in animation for cards */
+.add-test-page .bg-white {
+  opacity: 0;
+  animation: fadeInCard 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes fadeInCard {
+  to { opacity: 1; }
+}
+
+/* ...existing code... */
+
+/* Center the test type selection section and cards */
+.add-test-page .test-type-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-test-page .test-type-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.add-test-page .test-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  max-width: 260px;
+  min-height: 220px;
+  background: rgba(255,255,255,0.97);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,0.10);
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid #e0e7ef;
+}
+
+.add-test-page .test-type-card:hover {
+  box-shadow: 0 16px 48px 0 rgba(59,130,246,0.18);
+  transform: translateY(-6px) scale(1.04);
+  border-color: #6366f1;
+}
+
+.add-test-page .test-type-card .icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+}
+
+.add-test-page .test-type-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.add-test-page .test-type-card .card-desc {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* Center the test configuration and question creation forms */
+.add-test-page .centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ...keep the rest of your existing CSS... */
+
+/* Center the test configuration and question creation forms horizontally and vertically */
+.add-test-page .centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 0;
+}
+
+/* Make the card itself centered and with a max width */
+.add-test-page .centered-section > .bg-white {
+  margin: 0 auto;
+  max-width: 420px;
+  width: 100%;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+/* Responsive: allow cards to be full width on mobile */
+@media (max-width: 500px) {
+  .add-test-page .centered-section > .bg-white {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 1.2rem !important;
+  }
+}
+
+/* Make sure all input, textarea, and button elements fill the card width */
+.add-test-page input,
+.add-test-page textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make the action buttons always fill the card width and stack on mobile */
+.add-test-page .flex.space-x-4 {
+  gap: 1rem;
+}
+.add-test-page .flex.space-x-4 > button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@media (max-width: 500px) {
+  .add-test-page .flex.space-x-4 {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Add a little space between stacked cards */
+.add-test-page .centered-section > .bg-white + .bg-white {
+  margin-top: 2rem;
+}
+
+
+
+/* Make cards visually distinct and spaced */
+.add-test-page .centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 100vw;
+  min-height: 0;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Card appearance for both config and question */
+.add-test-page .centered-section > .bg-white {
+  margin: 0 auto;
+  max-width: 440px;
+  width: 100%;
+  min-width: 320px;
+  box-sizing: border-box;
+  border: 2.5px solid #e0e7ef;
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,0.13);
+  padding: 2.2rem 2rem;
+  position: relative;
+}
+
+/* Headings and labels: always dark and readable */
+.add-test-page h2,
+.add-test-page h1,
+.add-test-page h3,
+.add-test-page label {
+  color: #1e293b !important;
+  text-shadow: none !important;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.add-test-page label {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.add-test-page input,
+.add-test-page textarea {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.97);
+}
+
+/* Button group: more spacing and always visible */
+.add-test-page .flex.space-x-4 {
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.add-test-page .flex.space-x-4 > button {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 1.08rem;
+  padding: 0.85rem 0.5rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.add-test-page .bg-blue-600,
+.add-test-page .bg-blue-600:hover {
+  color: #fff !important;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+  border: none;
+}
+
+.add-test-page .border-purple-600 {
+  border-width: 2px !important;
+  border-color: #a78bfa !important;
+  color: #7c3aed !important;
+  background: #f3e8ff !important;
+  font-weight: 700;
+}
+
+.add-test-page .border-purple-600:hover {
+  background: #ede9fe !important;
+  color: #6d28d9 !important;
+}
+
+/* Responsive: allow cards to be full width on mobile */
+@media (max-width: 600px) {
+  .add-test-page .centered-section > .bg-white {
+    max-width: 99vw;
+    min-width: 0;
+    padding: 1.2rem !important;
+  }
+  .add-test-page .flex.space-x-4 {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+/* Make radio buttons and options align nicely */
+.add-test-page input[type="radio"] {
+  accent-color: #2563eb;
+  margin-right: 0.5rem;
+}
+
+/* Option labels */
+.add-test-page .option-label {
+  font-weight: 600;
+  color: #374151;
+  margin-right: 0.5rem;
+}
+
+/* Add a little space between stacked cards */
+.add-test-page .centered-section > .bg-white + .bg-white {
+  margin-top: 2.5rem;
+}
+
+/* Make the question creation card bigger than the config card */
+.add-test-page .centered-section > .bg-white.question-card {
+  max-width: 520px;
+  min-height: 480px;
+  padding: 2.7rem 2.2rem;
+}
