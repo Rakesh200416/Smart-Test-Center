@@ -250,5 +250,10 @@ For technical support or questions, please create an issue in the repository or 
 ---
 
 **Version**: 2.0.0  
-**Last Updated**: December 2024  
+**Last Updated**: September 2025  
+
 **Developer**: STC Development Team
+Rakesh R 
+Ranjitha A M
+Vasu M S
+Nayana S S
