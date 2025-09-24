@@ -1,0 +1,11 @@
+{
+  "name": "Test",
+  "questions": [
+    {
+      "question": "Test?",
+      "options": ["A", "B"],
+      "correctOption": "A",
+      "marks": 1
+    }
+  ]
+}

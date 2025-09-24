@@ -1,0 +1,120 @@
+/* Animation */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Base card */
+.bg-white.rounded-xl.shadow-lg.p-6.m-2.flex.flex-col {
+  animation: cardFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: box-shadow 0.3s, transform 0.3s;
+  border-radius: 1.5rem;
+  align-items: center;
+  text-align: center;
+  min-height: 340px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 1.5rem;
+  color: #fff; /* Ensure all text is visible */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* Makes text readable on gradients */
+}
+
+/* Cycle backgrounds every 6 cards */
+.test-card-grid > div:nth-child(6n+1) {
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%); /* Orange */
+}
+.test-card-grid > div:nth-child(6n+2) {
+  background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); /* Pink/Blue */
+}
+.test-card-grid > div:nth-child(6n+3) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); /* Green/Teal */
+}
+.test-card-grid > div:nth-child(6n+4) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple/Blue */
+}
+.test-card-grid > div:nth-child(6n+5) {
+  background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%); /* Orange */
+}
+.test-card-grid > div:nth-child(6n+6) {
+  background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); /* Pink/Blue */
+}
+
+/* Hover effect */
+.bg-white.rounded-xl.shadow-lg.p-6.m-2.flex.flex-col:hover {
+  transform: translateY(-10px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 16px 48px 0 rgba(0,0,0,0.18);
+  z-index: 2;
+}
+
+/* Title (now readable) */
+.text-xl.font-bold {
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+  background: none;
+  -webkit-text-fill-color: #fff; /* White title */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Info text */
+.mb-2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.08rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Badge style */
+.px-3.py-1.rounded-full.text-xs.font-semibold {
+  background: rgba(255,255,255,0.2);
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12);
+  border: none;
+  margin-bottom: 14px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+}
+
+/* Button */
+.mt-auto.bg-blue-600.text-white.px-4.py-2.rounded-lg {
+  background: linear-gradient(90deg, #ff6e7f 0%, #bfe9ff 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 2rem;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(255,110,127,0.12);
+  margin-top: 24px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding: 0.75rem 2.5rem;
+}
+.mt-auto.bg-blue-600.text-white.px-4.py-2.rounded-lg:hover {
+  background: linear-gradient(90deg, #ffb347 0%, #ff6e7f 100%);
+  transform: scale(1.07);
+  box-shadow: 0 4px 24px 0 rgba(255,110,127,0.18);
+}
+
+/* Grid */
+.test-card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.2rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 768px) {
+  .test-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

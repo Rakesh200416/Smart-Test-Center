@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fix Authentication Issues</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 100px auto; text-align: center; }
+        button { padding: 15px 30px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px; }
+        button:hover { background: #0056b3; }
+        .success { color: green; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Fix Authentication Issues</h1>
+    <p>Click the button below to clear invalid authentication data:</p>
+    <button onclick="clearAuth()">Clear Authentication Data</button>
+    <div id="result"></div>
+    
+    <script>
+        function clearAuth() {
+            try {
+                localStorage.clear();
+                sessionStorage.clear();
+                document.getElementById('result').innerHTML = '<div class="success">✅ Authentication data cleared successfully!</div>';
+                setTimeout(() => {
+                    window.location.href = 'http://localhost:3000/login';
+                }, 2000);
+            } catch (error) {
+                document.getElementById('result').innerHTML = '<div style="color: red;">❌ Error: ' + error.message + '</div>';
+            }
+        }
+    </script>
+</body>
+</html>
